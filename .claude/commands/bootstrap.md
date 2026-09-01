@@ -83,6 +83,12 @@ Run `./scripts/verify.sh`. Do not finish this command on an unproven verify.
 - A command that doesn't exist → drop it or fix it with the user now.
 - Genuine test failures in an existing project → that's a real finding. Report it and
   leave verify configured; do not weaken checks to get green.
+- **Empty greenfield project** — there is nothing to check yet, and that's fine.
+  Register only the checks that can genuinely run today (often none). Record the
+  intended full set as a comment inside the CHECKS block, and make "turn those on"
+  an explicit acceptance criterion of the first scaffolding task. Never register a
+  check that cannot pass yet: a verify that is red from day one trains everyone to
+  ignore it.
 
 ### 6. Record and hand off
 
